@@ -1,0 +1,180 @@
+﻿
+
+<style>
+    .product-card > img {
+        border-radius: 2%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .product-card-desc {
+        display: block;
+        margin-top: .25rem;
+        font-weight: 700;
+        color: black;
+    }
+
+    .product-card-full {
+        cursor: pointer;
+    }
+</style>
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Ladies Page</h1>
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container-fluid">
+        <!-- PRODUCT CATEGORY LIST-->
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card-full">
+                    <div class="card-body product-card">
+                        <img src="~/Content/ProductImage/Dress.jpg" alt="User Image" />
+                        <span class="info-box-number product-card-desc" style="text-align:center">Kurties</span>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-block btn-info float-right">See More</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card-full">
+                    <div class="card-body product-card">
+                        <img src="~/Content/ProductImage/RedKurti1.jpg" alt="User Image" />
+                        <span class="info-box-number product-card-desc" style="text-align:center">Patyalla</span>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-block btn-info float-right">See More</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card-full">
+                    <div class="card-body product-card">
+                        <img src="~/Content/ProductImage/Dress.jpg" alt="User Image" />
+                        <span class="info-box-number product-card-desc" style="text-align:center">Designer Dresses</span>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-block btn-info float-right">See More</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card product-card-full">
+                    <div class="card-body product-card">
+                        <img src="~/Content/ProductImage/RedKurti1.jpg" alt="User Image" />
+                        <span class="info-box-number product-card-desc" style="text-align:center">Leggis</span>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-block btn-info float-right">See More</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT CATEGORY LIST-->
+        <hr />
+
+        <div class="row">
+            @foreach (var a in ViewBag.ProductList)
+            {
+                <div class="col-12 col-sm-6 col-md-3">
+
+                    <div class="card product-card-full">
+                        <a href="@Url.Action("ProductDetail", "Product", new { id = a.ProductId })">
+                            <div class="card-body product-card">
+                                <img src="~/Content/ProductImage/@a.Image1" alt="User Image" />
+                                <span class="info-box-number product-card-desc">@a.Title</span>
+                            </div>
+                        </a>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-block btn-info float-right">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+
+        <!--Samples-->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's
+                            content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the card's
+                            content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div><!-- /.card -->
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="m-0">Featured</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Special title treatment</h6>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h5 class="m-0">Featured</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Special title treatment</h6>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!--Samples-->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        console.log("ready!");
+
+        $(".product-card-full").click(function () {
+            alert("Handler for .click() called.");
+            window.location("@Url.Action("ProductDetail","Product")");
+        });
+    });
+</script> 
